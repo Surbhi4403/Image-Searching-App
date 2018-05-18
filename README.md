@@ -15,6 +15,6 @@ and pass header as Ocp-Apim-Subscription-Key:Your_API_Key
 * Once you will see search results, you will see options menu to switch between 3/4 columns from 2. Once you will change columns, options menu will change according to the selected value, i.e. If selected 3, options menu will show 2 and 4 in the list and vice versa.
 * It will load 20 items for first time and once you'll scroll, it'll get more items and load them in the same list.
 * Whatever you have seen in the app in online mode in searching (Images), you will be able to see all of them in offline mode as that data's saved in SQLite database of mobile app.
-* Once you will click at any image, you will see shared element transition between grid and full screen image.
-* The full screen image have view pager so you can swipe left and right from same screen to check images.
+* Once you will click on any image, you will see shared element transition between grid and full screen image.
+* The full screen image has view pager so you can swipe left and right from same screen to check images.
 
