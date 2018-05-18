@@ -305,8 +305,11 @@ public class GridFragment extends Fragment implements ImageApiInterface.onApiFin
         int gridWidth = screenWidth / numberOfColumns - 50;
         if (imagesList.size() > 0) {
             recyclerView.setAdapter(new GridAdapter(mContext, this, imagesList, gridWidth, viewFrom));
-            if (scrollPosition != -1 && offset != 0)
+            if (scrollPosition != -1 && offset != 0) {
                 scrollToPosition(scrollPosition);
+            } else
+                scrollPosition = 0;
+
             recyclerView.setLayoutManager(new GridLayoutManager(getContext(), numberOfColumns));
 
             //Grid Transitions
