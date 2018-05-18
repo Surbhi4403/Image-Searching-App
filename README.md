@@ -2,8 +2,17 @@
 
 An Android view for displaying images using bing APIs, Offline image saving in SQLite DB, Pagination of records and Shared Element Transitions between grid and details view images. Scroll feature on details view as well to view back and next images.
 
-## Demo
-![video](Video/video.gif)
+## Search and View Images with Pagination
+![video](Gifs/SearchItemsAndPagination.gif)
+
+## Change Number of Columns
+![video](Gifs/ChangeColumns.gif)
+
+## Shared Element Transitions and Viewpager with Image scroll option
+![video](Gifs/SharedElmentTransition.gif)
+
+## Offline Images
+![video](Gifs/OfflineData.gif)
 
 ## How it Works
 * Create Bing Account and generate Image Search API Key. 
