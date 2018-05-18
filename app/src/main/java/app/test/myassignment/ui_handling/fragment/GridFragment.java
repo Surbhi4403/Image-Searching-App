@@ -203,11 +203,10 @@ public class GridFragment extends Fragment implements ImageApiInterface.onApiFin
 
         if (CommonFunctions.checkInternetConnection(mContext)) {
             if (imageSearchAPI != null && !apiCalling) {
-                showLoader();
-                apiCalling = true;
-
                 if (this.searchTerm != null && !this.searchTerm.equalsIgnoreCase(searchTerm))
                     offset = 0;
+
+                showLoader();
 
                 imageSearchAPI.imageSearchAPI(mContext, searchTerm, offset, countOfRecords, this, api, call);
             } else bottomFound = false;
@@ -289,16 +288,13 @@ public class GridFragment extends Fragment implements ImageApiInterface.onApiFin
             offset = response.getNextOffset();
             setDataInGrid();
         }
-        apiCalling = false;
         bottomFound = false;
-
     }
 
     /* API failure and data handling */
     @Override
     public void onApiFailure(String message) {
         hideLoader();
-        apiCalling = false;
         bottomFound = false;
 
         if (!message.equalsIgnoreCase(getString(R.string.call_cancelled)))
@@ -329,12 +325,14 @@ public class GridFragment extends Fragment implements ImageApiInterface.onApiFin
     public void showLoader() {
         loader.setVisibility(offset == 0 ? View.VISIBLE : View.GONE);
         cir_loader.setVisibility(offset > 0 ? View.VISIBLE : View.GONE);
+        apiCalling = true;
     }
 
     /* To hide middle and bottom loaders */
     public void hideLoader() {
         loader.setVisibility(View.GONE);
         cir_loader.setVisibility(View.GONE);
+        apiCalling = false;
     }
 
     public void showSnackbar(String message) {
