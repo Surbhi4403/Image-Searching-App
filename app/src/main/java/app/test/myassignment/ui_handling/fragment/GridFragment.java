@@ -279,14 +279,13 @@ public class GridFragment extends Fragment implements ImageApiInterface.onApiFin
                 if (!databaseHelper.isRecordExist(value.getImageId())) {
                     value.setSearchTerm(searchTermItem);
                     new DownloadImage().execute(value);
-//                getBitmapFromURLAndStoreInDB(value);
                 }
             }
             imagesList.addAll(response.getValue());
             viewFrom = CommonFunctions.Online;
             searchTerm = searchTermItem;
-            offset = response.getNextOffset();
             setDataInGrid();
+            offset = response.getNextOffset();
         }
         bottomFound = false;
     }
