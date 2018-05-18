@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Image Search App</string>
+    <string name="search">Search</string>
+    <string name="image_description">ImageData</string>
+
+    //Search data errors handling
+    <string name="no_internet">No Internet Connection</string>
+    <string name="no_data">No Images Available</string>
+    <string name="same_search">Results are already there for same search term</string>
+
+    //API responses
+    <string name="got_response">Images</string>
+    <string name="api_error">ErrorResponse</string>
+    <string name="response_error">ResponseError</string>
+    <string name="api_failure">APIError</string>
+    <string name="call_cancelled">API Cancelled</string>
+
+    //Menu Options
+    <string name="column_2">2 Columns</string>
+    <string name="column_3">3 Columns</string>
+    <string name="column_4">4 Columns</string>
+
+</resources>
