@@ -1,32 +1,20 @@
-# Scrolling Images
+# Image Searching App
 
-An Android view for displaying repeated continuous side scrolling images. This can be used to create a parallax animation effect.
+An Android view for displaying images using bing APIs, Offline image saving in SQLite DB, Pagination of records and Shared Element Transitions between grid and details view images. Scroll feature on details view as well to view back and next images.
 
 ## Demo
 ![video](Video/video.gif)
 
-## Usage
-In your Android layout file add:
-```xml
- <com.surbhi.scrollingimageslibrary.ScrollingImageView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:speed="1.5dp"
-        app:src="@array/day_imgs" />
-```
+## How it Works
+* Create Bing Account and generate Image Search API Key. 
+* Use below API:
+https://api.cognitive.microsoft.com/bing/v7.0/images/search?mkt=en-in&safeSearch=Strict&q=searchTerm&offset=0&count=20
+and pass header as Ocp-Apim-Subscription-Key:Your_API_Key
+* Change API key in the file: CommonFunctions>BingKey and get results using your key.
+* Enter search Term in the box and press of either side search button or keyboard's search button (Done button will be converted to search button as applied in xml).
+* Once you will see search results, you will see options menu to switch between 3/4 columns from 2. Once you will change columns, options menu will change according to the selected value, i.e. If selected 3, options menu will show 2 and 4 in the list and vice versa.
+* It will load 20 items for first time and once you'll scroll, it'll get more items and load them in the same list.
+* Whatever you have seen in the app in online mode in searching (Images), you will be able to see all of them in offline mode as that data's saved in SQLite database of mobile app.
+* Once you will click at any image, you will see shared element transition between grid and full screen image.
+* The full screen image have view pager so you can swipe left and right from same screen to check images.
 
-There are two attributes for the `ScrollingImageView` namely `speed` and `src`.
-* `speed` is the number of `dp`'s to move the bitmap on each animation frame (may be a negative number)
-* `src` is the drawable to paint (**must be a bitmap or array of images!**)
-
-Don't forget to add the namespace to your root XLM element
-```xml
-xmlns:app="http://schemas.android.com/apk/res-auto"
-```
-
-In your Java code, you can start and stop the animation like this:
-```java
-ScrollingImageView scrollingBackground = (ScrollingImageView) findViewById(R.id.scrollView);
-scrollingBackground.stop();
-scrollingBackground.start();
