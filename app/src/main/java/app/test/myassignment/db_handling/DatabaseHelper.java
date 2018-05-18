@@ -17,10 +17,8 @@ import app.test.myassignment.api_handling.pojo.Value;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-    private Context context;
-    private final String TAG = "DatabaseHelperClass";
     private static final int databaseVersion = 1;
-    private static final String databaseName = "dbTest";
+    private static final String databaseName = "ImageDB";
     private static final String TABLE_IMAGE = "ImageTable";
 
     // Image Table Columns names
@@ -32,7 +30,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     public DatabaseHelper(Context context) {
         super(context, databaseName, null, databaseVersion);
-        this.context = context;
     }
 
     @Override
